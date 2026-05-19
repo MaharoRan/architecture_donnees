@@ -89,7 +89,7 @@ services:
       - "SPARK_MASTER=spark://spark-master:7077"
       - CORE_CONF_fs_defaultFS=hdfs://namenode:9000
       - SPARK_WORKER_CORES=2
-      - SPARK_WORKER_MEMORY=1g
+      - SPARK_WORKER_MEMORY=2g
     volumes:
       - ./source:/source
 
@@ -100,12 +100,12 @@ services:
     depends_on:
       - spark-master
     ports:
-      - "8082:8081"     # UI du worker 2 exposée sur 8082 (interne reste 8081)
+      - "8082:8081"
     environment:
       - SPARK_MASTER=spark://spark-master:7077
       - CORE_CONF_fs_defaultFS=hdfs://namenode:9000
       - SPARK_WORKER_CORES=2
-      - SPARK_WORKER_MEMORY=1g
+      - SPARK_WORKER_MEMORY=2g
     volumes:
       - ./source:/source
 
