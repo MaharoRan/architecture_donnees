@@ -23,7 +23,7 @@ def load_to_mongodb(input_path, mongo_uri, database, collection):
 
 if __name__ == "__main__":
     load_to_mongodb(
-        "silver/iris.parquet",
+        "iris.parquet",
         f"mongodb+srv://{mongo_user}:{mongo_password}@cluster0.3bidwmj.mongodb.net/",
         "dataarchi",
         "location"
